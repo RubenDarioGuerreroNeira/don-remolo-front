@@ -1,0 +1,15 @@
+# Crear un nuevo proyecto con Vite
+npm create vite@latest osteria-francescana -- --template react
+
+# Entrar al directorio del proyecto
+cd osteria-francescana
+
+# Instalar las dependencias del package.json que te proporcioné arriba
+npm install
+
+# Instalar las dependencias de desarrollo
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+# Iniciar el servidor de desarrollo
+npm run dev
