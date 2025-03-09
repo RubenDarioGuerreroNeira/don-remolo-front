@@ -7,6 +7,11 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: process.env.PORT || 3000,
+    allowedHosts: [
+      'don-remolo-front.onrender.com',
+      '.onrender.com',
+      'localhost'
+    ]
   },
   preview: {
     host: '0.0.0.0',
