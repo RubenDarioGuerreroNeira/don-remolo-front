@@ -34,7 +34,7 @@ function Contact() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <span className="font-semibold w-24">Dirección:</span>
-              <span>Calle Principal 123, Ciudad</span>
+              <span>Calle Principal 123, Bogotá</span>
             </motion.p>
             <motion.p
               className="flex items-center"
@@ -42,7 +42,7 @@ function Contact() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <span className="font-semibold w-24">Teléfono:</span>
-              <span>(123) 456-7890</span>
+              <span>(+57) 516857412</span>
             </motion.p>
             <motion.p
               className="flex items-center"
