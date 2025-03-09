@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function Footer() {
   return (
@@ -12,7 +12,7 @@ function Footer() {
           </div>
           <div>
             <h3 className="font-display text-xl mb-4">Contacto</h3>
-            <p>Teléfono: (+580416) 0897020</p>
+            <p>Teléfono: (+58) 04160897020</p>
             <p>Email: info@donremolo.com</p>
           </div>
           <div>
@@ -22,7 +22,10 @@ function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
-          <p>&copy; {new Date().getFullYear()} Don Remolo. Todos los derechos reservados.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Rubén D.Guerrero N. Todos los
+            derechos reservados.
+          </p>
         </div>
       </div>
     </footer>
