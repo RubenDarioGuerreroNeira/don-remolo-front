@@ -48,8 +48,7 @@ function Home() {
       title: "Pizza a la Leña ",
       description:
         "Elaborada diariamente en nuestra cocina con las mejores materias primas importadas de Italia. Descubre el auténtico sabor de la pizza artesanal",
-      // image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      image:
+            image:
         "https://images.unsplash.com/photo-1579751626657-72bc17010498?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       tags: ["Hecho en casa", "Tradicional", "Italiano"],
     },
