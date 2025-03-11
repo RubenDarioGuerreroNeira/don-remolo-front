@@ -97,15 +97,28 @@ function Menu() {
         </motion.div>
       ))}
 
+
+
+
+// pruductos d ela bd
       {/* Productos Dinámicos */}
-      <motion.div variants={itemVariants} className="mt-16">
+      {/* <motion.div variants={itemVariants} className="mt-16">
         <h2 className="font-display text-3xl mb-6 text-primary">
           Productos Especiales
         </h2>
         <ProductList />
       </motion.div>
+   */}
+  
+  
     </motion.div>
-  );
+
+
+
+);
+
+
+
 }
 
 export default Menu;
