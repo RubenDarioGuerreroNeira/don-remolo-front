@@ -12,19 +12,19 @@ function Footer() {
           </div>
           <div>
             <h3 className="font-display text-xl mb-4">Contacto</h3>
-            <p>Teléfono: (+58) 04160897020</p>
-            <p>Email: info@donremolo.com</p>
+            <p>Teléfono: (+57) 317 6616866</p>
+            <p>Email: reservas@donremolo.com</p>
           </div>
           <div>
             <h3 className="font-display text-xl mb-4">Dirección</h3>
-            <p>Calle Principal 123</p>
+            <p>Calle 65bis # 4-23 </p>
             <p>Bogotá , Colombia</p>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
           <p>
             &copy; {new Date().getFullYear()} Rubén D.Guerrero N. Todos los
-            derechos reservados.
+            derechos reservados.2025
           </p>
         </div>
       </div>
