@@ -10,7 +10,6 @@ const ProductsPage: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-
     const isValidProductData = (data: any): data is Product[] => {
         if (!Array.isArray(data)) {
             console.error('Los datos no son un array:', data);
@@ -18,10 +17,8 @@ const ProductsPage: React.FC = () => {
         }
 
         return data.every(item => {
-            // Crear una copia del objeto para evitar modificar los datos originales
             const product = { ...item };
 
-            // Convertir price a número si viene como string
             if (typeof product.price === 'string') {
                 product.price = parseFloat(product.price);
             }
@@ -31,6 +28,7 @@ const ProductsPage: React.FC = () => {
                 typeof product.name === 'string' &&
                 typeof product.price === 'number' &&
                 typeof product.description === 'string' &&
+                typeof product.image === 'string' &&
                 typeof product.category === 'string' &&
                 typeof product.stockIn === 'number';
 
@@ -41,8 +39,6 @@ const ProductsPage: React.FC = () => {
             return isValid;
         });
     };
-
-
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -65,7 +61,7 @@ const ProductsPage: React.FC = () => {
                     name: String(item.name),
                     price: typeof item.price === 'string' ? parseFloat(item.price) : item.price,
                     description: String(item.description),
-                    // category: String(item.category),
+                    image: String(item.image), // Asegúrate de incluir la propiedad `image`
                     category: typeof item.category === 'object' && item.category !== null ? item.category.name : item.category,
                     stockIn: Number(item.stockIn),
                 }));
@@ -82,7 +78,6 @@ const ProductsPage: React.FC = () => {
                 setLoading(false);
             }
         };
-
 
         fetchProducts();
     }, []);
@@ -128,6 +123,5 @@ const ProductsPage: React.FC = () => {
 };
 
 export default ProductsPage;
-
 
 
