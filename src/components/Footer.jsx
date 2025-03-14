@@ -17,7 +17,7 @@ function Footer() {
           </div>
           <div>
             <h3 className="font-display text-xl mb-4">Dirección</h3>
-            <p>Calle 65bis # 4-23 </p>
+            <p>Calle 65 bis # 4-23 </p>
             <p>Bogotá , Colombia</p>
           </div>
         </div>
