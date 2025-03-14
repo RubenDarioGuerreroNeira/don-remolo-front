@@ -3,13 +3,14 @@ import { Product } from '../types/product';
 
 interface ProductCardProps {
     product: Product;
+    children?: React.ReactNode; // Añadir children como propiedad opcional
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({ product, children }) => {
     console.log('Producto renderizado:', product); // Depuración
 
     return (
-        <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+        <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow relative">
             {/* Mostrar la imagen del producto */}
             {product.image && product.image !== 'undefined' && product.image.trim() !== '' && (
                 <img
@@ -32,6 +33,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                     </span>
                 )}
             </div>
+            {children} {/* Renderizar children si existen */}
         </div>
     );
 };
