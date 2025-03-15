@@ -5,6 +5,8 @@ import ProductList from '../components/ProductList';
 import { ProductSkeleton } from '../components/ProductSkeleton';
 import { ProductCard } from '../components/ProductCard';
 import { FaShoppingCart } from 'react-icons/fa';
+import { useCart } from "../context/CarContext";
+import { toast } from "react-toastify";
 
 const ProductsPage: React.FC = () => {
     const [products, setProducts] = useState<Product[]>([]);
@@ -14,12 +16,23 @@ const ProductsPage: React.FC = () => {
     const [totalPages, setTotalPages] = useState(1);
     const [selectedCategory, setSelectedCategory] = useState<string>('');
     const [categories, setCategories] = useState<string[]>([]);
+    const { addToCart, getCartItemsCount } = useCart();
+
+    // carrito
+    const handleAddToCart = (product: Product) => {
+        addToCart(product);
+        toast.success(`Se ha añadido el producto ${product.name} al carrito.`);
+    };
+
+
 
     const isValidProductData = (data: any): data is Product[] => {
         if (!Array.isArray(data)) {
             console.error('Los datos no son un array:', data);
             return false;
         }
+
+
 
         return data.every(item => {
             const product = { ...item };
@@ -146,6 +159,17 @@ const ProductsPage: React.FC = () => {
         <div className="container mx-auto px-4 py-8">
             <h1 className="text-3xl font-bold mb-8">Nuestros Productos</h1>
 
+// obriene y cuenta del carrito
+            <div className="relative">
+                <FaShoppingCart className="text-2xl text-primary" />
+                {getCartItemsCount() > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                        {getCartItemsCount()}
+                    </span>
+                )}
+            </div>
+
+
             {/* Filtro de categorías */}
             <div className="mb-6 flex justify-end">
                 {/* <div className="mb-6">// aparece en el lado derecho */}
@@ -163,13 +187,19 @@ const ProductsPage: React.FC = () => {
                 </select>
             </div>
 
+
+
             {filteredProducts.length === 0 ? (
                 <p className="text-gray-500">No hay productos disponibles.</p>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredProducts.map((product) => (
                         <ProductCard key={product.id} product={product}>
-                            <button className="absolute top-2 right-2 bg-primary text-white p-2 rounded-full">
+                            <button
+                                onClick={() => handleAddToCart(product)}
+                                className="absolute top-2 right-2 bg-primary text-white p-2 rounded-full hover:bg-primary-dark transition-colors"
+                                aria-label={`Agregar ${product.name} al carrito`}
+                            >
                                 <FaShoppingCart />
                             </button>
                         </ProductCard>
