@@ -7,6 +7,7 @@ import { ProductCard } from '../components/ProductCard';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useCart } from "../context/CarContext";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const ProductsPage: React.FC = () => {
     const [products, setProducts] = useState<Product[]>([]);
@@ -24,15 +25,11 @@ const ProductsPage: React.FC = () => {
         toast.success(`Se ha añadido el producto ${product.name} al carrito.`);
     };
 
-
-
     const isValidProductData = (data: any): data is Product[] => {
         if (!Array.isArray(data)) {
             console.error('Los datos no son un array:', data);
             return false;
         }
-
-
 
         return data.every(item => {
             const product = { ...item };
@@ -88,7 +85,6 @@ const ProductsPage: React.FC = () => {
 
             setProducts(transformedItems);
 
-            // Extraer categorías únicas de los productos
             // Extraer categorías únicas de los productos y asegurarse de que son strings
             const uniqueCategories = Array.from(
                 new Set(
@@ -102,7 +98,6 @@ const ProductsPage: React.FC = () => {
 
             // Ahora uniqueCategories es definitivamente un array de strings
             setCategories(uniqueCategories);
-
 
             setTotalPages(Math.ceil(total / limit));
             setCurrentPage(page);
@@ -159,9 +154,11 @@ const ProductsPage: React.FC = () => {
         <div className="container mx-auto px-4 py-8">
             <h1 className="text-3xl font-bold mb-8">Nuestros Productos</h1>
 
-// obriene y cuenta del carrito
+            {/* Icono del carrito y contador */}
             <div className="relative">
-                <FaShoppingCart className="text-2xl text-primary" />
+                <Link to="/carrito" className="text-2xl text-primary">
+                    <FaShoppingCart />
+                </Link>
                 {getCartItemsCount() > 0 && (
                     <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
                         {getCartItemsCount()}
@@ -169,10 +166,8 @@ const ProductsPage: React.FC = () => {
                 )}
             </div>
 
-
             {/* Filtro de categorías */}
             <div className="mb-6 flex justify-end">
-                {/* <div className="mb-6">// aparece en el lado derecho */}
                 <select
                     value={selectedCategory}
                     onChange={handleCategoryChange}
@@ -186,8 +181,6 @@ const ProductsPage: React.FC = () => {
                     ))}
                 </select>
             </div>
-
-
 
             {filteredProducts.length === 0 ? (
                 <p className="text-gray-500">No hay productos disponibles.</p>
@@ -229,7 +222,3 @@ const ProductsPage: React.FC = () => {
 };
 
 export default ProductsPage;
-
-
-
-

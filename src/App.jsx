@@ -4,12 +4,14 @@ import { CartProvider } from './context/CarContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import ProductsPage from "./pages/ProductsPage";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import CartPage from "./pages/CartPage";
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
               {/* <Route path="/menu" element={<Menu />} /> */}
               <Route path="/productos" element={<ProductsPage />} />
               <Route path="/contacto" element={<Contact />} />
+              <Route path="/carrito" element={<CartPage />} />
             </Routes>
           </main>
           <Footer />
