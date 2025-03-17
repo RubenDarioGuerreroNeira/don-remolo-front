@@ -1,12 +1,12 @@
-// src/types/order.ts
+import { Product } from "./product";
 export interface Order {
-  id: string;
-  products: {
+  items: Array<{
     productId: string;
     quantity: number;
-  }[];
-  totalAmount: number;
-  status: "pending" | "processing" | "completed" | "cancelled";
+  }>;
+  total: number;
   createdAt: string;
-  updatedAt: string;
+  customerName: string;
+  customerPhone: string;
+  customerAddress: string;
 }
