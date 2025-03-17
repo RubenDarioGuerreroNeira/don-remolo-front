@@ -4,13 +4,34 @@
 
 Aplicación web para Pizzería Don Remolo, desarrollada con React y Vite. Permite a los usuarios explorar el menú, realizar pedidos y contactar con el restaurante.
 
-## 🚀 Tecnologías Utilizadas
+### Para Clientes
 
-- React 18
-- Vite
-- Tailwind CSS
-- Framer Motion
-- React Router DOM
+- 🛒 Carrito de compras interactivo
+- 📱 Diseño responsive para todos los dispositivos
+- 💬 Integración con WhatsApp para confirmación de pedidos
+- 🗺️ Seguimiento de estado de pedidos
+- ⭐ Sistema de reseñas y valoraciones
+
+### Para Administradores
+
+- 📊 Panel de administración intuitivo
+- 🔄 Gestión de menú en tiempo real
+- 📦 Control de inventario
+- 📈 Análisis de ventas y tendencias
+
+## 🛠️ Stack Tecnológico
+
+### Frontend
+
+- **React 18** - Framework principal de UI
+- **TypeScript** - Tipado estático para mayor robustez
+- **Vite** - Build tool y dev server
+- **Tailwind CSS** - Framework de estilos
+- **React Router DOM** - Navegación SPA
+- **React Context** - Gestión de estado
+- **React Icons** - Iconografía
+- **Framer Motion** - Animaciones
+- **React Toastify** - Notificaciones
 
 ## 📋 Prerrequisitos
 
@@ -33,6 +54,7 @@ npm i
 npm run dev - Inicia el servidor de desarrollo
 npm run build - Construye la aplicación para producción
 npm run preview - Previsualiza la versión de producción localmente
+npm run test        # Ejecuta los tests
 npm run start - Inicia la aplicación en modo producción
 
 🌐 Despliegue
@@ -43,6 +65,7 @@ Configura el servicio web con:
 Build Command: npm install && npm run build
 Start Command: npm run start
 Node version: 18
+
 🎨 Características
 Diseño responsive
 Animaciones fluidas con Framer Motion
@@ -69,16 +92,20 @@ Crea tu Feature Branch (git checkout -b feature/AmazingFeature)
 Commit tus cambios (git commit -m 'Add some AmazingFeature')
 Push a la Branch (git push origin feature/AmazingFeature)
 Abre un Pull Request
+
 📄 Licencia
 Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE.md para detalles
 
-✨ Agradecimientos
-Vite
-React
-Tailwind CSS
-Framer Motion
+
+📝 Convenciones de Código
+Usar TypeScript para todo el código nuevo
+Seguir el estilo de código de ESLint
+Documentar componentes y funciones principales
+Escribir tests para nueva funcionalidad
+
+
 📞 +58 0416 0897020
-Tu rudargeneira@gmail.com
+email rudargeneira@gmail.com
 
 Link del proyecto: https://github.com/tu-usuario/pizzeria-don-remolo-front
 

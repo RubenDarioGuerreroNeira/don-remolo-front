@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Product } from '../types/product';
 import { productService } from '../services/productService';
-// import ProductList from '../components/ProductList';
 import { ProductSkeleton } from '../components/ProductSkeleton';
 import { ProductCard } from '../components/ProductCard';
 import { FaShoppingCart } from 'react-icons/fa';
