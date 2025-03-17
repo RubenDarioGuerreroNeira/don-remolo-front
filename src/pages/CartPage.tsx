@@ -3,14 +3,16 @@ import { useCart } from '../context/CarContext';
 import { FaTrash, FaPlus, FaMinus } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import { Order } from '../types/order';
-
+import { useNavigate } from 'react-router-dom';
 interface CustomerForm {
     name: string;
     phone: string;
     address: string;
 }
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 const CartPage: React.FC = () => {
+    const navigate = useNavigate();
     const {
         cartItems,
         removeFromCart,
@@ -96,7 +98,8 @@ const CartPage: React.FC = () => {
             clearCart();
             setShowForm(false);
             setCustomerData({ name: '', phone: '', address: '' });
-
+            // redirijo a gracias
+            navigate('/gracias');
         } catch (error) {
             toast.error('Error al procesar la orden');
             console.error('Error:', error);
