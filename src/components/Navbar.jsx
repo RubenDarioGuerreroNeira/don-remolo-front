@@ -11,6 +11,9 @@ function Navbar() {
     { name: "Inicio", path: "/" },
     { name: "Menu", path: "/productos" },
     { name: "Contacto", path: "/contacto" },
+    { name: "Admin", path: "/admin/login" },
+
+
   ];
 
   return (
