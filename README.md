@@ -4,6 +4,19 @@
 
 Aplicación web para Pizzería Don Remolo, desarrollada con React y Vite. Permite a los usuarios explorar el menú, realizar pedidos y contactar con el restaurante.
 
+## 📸 Capturas de Pantalla
+
+<!-- Aquí puedes añadir las imágenes usando la siguiente sintaxis: -->
+
+![Página de inicio](/src/assets/inicio.png/)
+_Página de inicio de Don Remolo_
+
+![Menú](/src/assets/Menu%20-%20[don-remolo-front.onrender.com].png)
+_Nuestro menú de pizzas_
+
+![Manager](/src/assets/Login.png)
+_Manager_
+
 ### Para Clientes
 
 - 🛒 Carrito de compras interactivo
