@@ -3,7 +3,7 @@ import axios, { AxiosError } from "axios";
 import { Product } from "../types/product";
 import { handleApiError } from "../utils/apiErrorHandler";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_BASE_URL = import.meta.env?.VITE_API_URL || "http://localhost:3000";
 
 export const productService = {
   async getAllProducts(
@@ -50,6 +50,11 @@ export const productService = {
         }
 
         throw new Error(`Error al obtener productos: ${axiosError.message}`);
+      }
+
+      // Si ya es un error con mensaje, lo relanzamos
+      if (error instanceof Error) {
+        throw error;
       }
 
       throw new Error("Error desconocido al obtener productos");
